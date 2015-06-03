@@ -1,0 +1,13 @@
+*.cmd
+*.ko
+*.mod.c
+modules.order
+Module.symvers
+*.o
+*.swp
+.tmp_versions
+samples
+tools
+test
+doc/*.html
+
