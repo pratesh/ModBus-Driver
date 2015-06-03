@@ -8,6 +8,6 @@ Module.symvers
 .tmp_versions
 samples
 tools
-test
+testing
 doc/*.html
 
