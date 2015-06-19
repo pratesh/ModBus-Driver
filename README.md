@@ -1,3 +1,3 @@
-# ModBus Driver for Linux over USB serial 
+# ModBus Driver for Intel Galileo over UART 
 
-This is a host <LI></LI>inux driver for ModBus protocol implemented over USB serial to communicate to Intel Galileo which functions as a slave. 
+This is an attempt to build a serial driver that runs ModBus protocol over UART for the Intel Galileo platform. 
