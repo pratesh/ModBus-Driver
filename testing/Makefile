@@ -4,6 +4,8 @@
 # kernel build system and can use its language.
 ifneq (${KERNELRELEASE},)
     obj-m := t1.o
+    obj-m += videoRam.o
+    obj-m += usbDriver.o
 # Otherwise we were called directly from the command line.
 # Invoke the kernel build system.
 else

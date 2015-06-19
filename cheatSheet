@@ -1,0 +1,2 @@
+ifup eth0 - enabling ethernet in galileo
+scp serialDriver.ko root@10.42.0.81:/home/root copying files to galileo from host.

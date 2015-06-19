@@ -1,0 +1,124 @@
+root@clanton:~# insmod uartDriver.ko                                                
+[  122.275265] uart_config_port                                                     
+[  122.278196] uart_type                                                            
+[  122.280623] ttyUU0 at MMIO 0x9000f000 (irq = 4) is a unknown                     
+[  122.298530] BUG: unable to handle kernel NULL pointer dereference at   (null)    
+[  122.300041] IP: [<  (null)>]   (null)                                            
+[  122.300041] *pdpt = 000000000b75c001 *pde = 0000000000000000                     
+[  122.300041] Oops: 0010 [#1]                                                      
+[  122.300041] Modules linked in: uartDriver(O+) arc4 iwldvm mac80211 evdev usbhid n
+[  122.300041] Pid: 1444, comm: insmod Tainted: G         C O 3.8.7-yocto-standard 2
+[  122.300041] EIP: 0060:[<00000000>] EFLAGS: 00010046 CPU: 0                       
+[  122.300041] EIP is at 0x0                                                        
+[  122.300041] EAX: d2833000 EBX: ccc7c600 ECX: d28330c0 EDX: 00000000              
+[  122.300041] ESI: d2833000 EDI: 00000246 EBP: cb549e40 ESP: cb549db0              
+[  122.300041]  DS: 007b ES: 007b FS: 0000 GS: 0033 SS: 0068                        
+[  122.300041] CR0: 8005003b CR2: b778a000 CR3: 0b5b5000 CR4: 00100030              
+[  122.300041] DR0: 00000000 DR1: 00000000 DR2: 00000000 DR3: 00000000              
+[  122.300041] DR6: ffff0ff0 DR7: 00000400                                          
+[  122.300041] Process insmod (pid: 1444, ti=cb548000 task=ce817750 task.ti=cb54800)
+[  122.300041] Stack:                                                               
+[  122.300041]  c12311cc c1463e74 c1440304 c1440304 d28320cb 00000000 cb549df4 00004
+[  122.300041]  c14445e2 d2833140 cd539a80 c1440304 d28320cb 00000004 c14445e2 00000
+[  122.300041]  ccc7c658 4f494d4d 39783020 66303030 00303030 ccc7c698 cb549e24 c1213
+[  122.300041] Call Trace:                                                          
+[  122.300041]  [<c12311cc>] ? uart_add_one_port+0x26c/0x3d0                        
+[  122.300041]  [<c1217603>] ? tty_register_driver+0x113/0x170                      
+[  122.300041]  [<c123030d>] ? uart_register_driver+0x14d/0x1b0                     
+[  122.300041]  [<d271c000>] ? 0xd271bfff                                           
+[  122.300041]  [<d271c03a>] my_uart_init+0x3a/0x1000 [uartDriver]                  
+[  122.300041]  [<c1027b3f>] ? set_memory_nx+0x5f/0x70                              
+[  122.300041]  [<c1001222>] do_one_initcall+0x112/0x160                            
+[  122.300041]  [<c1329768>] ? set_section_ro_nx+0x54/0x59                          
+[  122.300041]  [<c107458d>] load_module+0x186d/0x1e10                              
+[  122.300041]  [<c1074b86>] ? sys_init_module+0x56/0xb0                            
+[  122.300041]  [<c1074ba8>] sys_init_module+0x78/0xb0                              
+[  122.300041]  [<c132da68>] syscall_call+0x7/0xb                                   
+[  122.300041] Code:  Bad EIP value.                                                
+[  122.300041] EIP: [<00000000>] 0x0 SS:ESP 0068:cb549db0                           
+[  122.300041] CR2: 0000000000000000                                                
+[  122.521562] ---[ end trace 59351b45a067b2f3 ]---                                 
+Killed 
+
+
+root@clanton:~# insmod uartDriver.ko                                                
+[ 1463.599850] uart_config_port                                                     
+[ 1463.602910] uart_type                                                            
+[ 1463.605233] ttyUU0 at MMIO 0x9000f000 (irq = 4) is a unknown                     
+[ 1463.611775] BUG: unable to handle kernel NULL pointer dereference at   (null)    
+[ 1463.618988] IP: [<  (null)>]   (null)                                            
+[ 1463.620945] *pdpt = 000000000d659001 *pde = 0000000000000000                     
+[ 1463.620945] Oops: 0010 [#1]                                                      
+[ 1463.620945] Modules linked in: uartDriver(O+) serialDriver(O) arc4 iwldvm mac802n
+[ 1463.620945] Pid: 1447, comm: insmod Tainted: G         C O 3.8.7-yocto-standard 2
+[ 1463.620945] EIP: 0060:[<00000000>] EFLAGS: 00010046 CPU: 0                       
+[ 1463.620945] EIP is at 0x0                                                        
+[ 1463.620945] EAX: d27b7000 EBX: cccf7000 ECX: d27b70c0 EDX: 00000000              
+[ 1463.620945] ESI: d27b7000 EDI: 00000246 EBP: ccd8be40 ESP: ccd8bdb0              
+[ 1463.620945]  DS: 007b ES: 007b FS: 0000 GS: 0033 SS: 0068                        
+[ 1463.620945] CR0: 8005003b CR2: 00000000 CR3: 0cc45000 CR4: 00100030              
+[ 1463.620945] DR0: 00000000 DR1: 00000000 DR2: 00000000 DR3: 00000000              
+[ 1463.620945] DR6: ffff0ff0 DR7: 00000400                                          
+[ 1463.620945] Process insmod (pid: 1447, ti=ccd8a000 task=ce8159d0 task.ti=ccd8a00)
+[ 1463.620945] Stack:                                                               
+[ 1463.620945]  c12311cc c1463e74 c1440304 c1440304 d27b60cb 00000000 ccd8bdf4 00004
+[ 1463.620945]  c14445e2 d27b7140 ccd69200 c1440304 d27b60cb 00000004 c14445e2 00000
+[ 1463.620945]  cccf7058 4f494d4d 39783020 66303030 00303030 cccf7098 ccd8be24 c1213
+[ 1463.620945] Call Trace:                                                          
+[ 1463.620945]  [<c12311cc>] ? uart_add_one_port+0x26c/0x3d0                        
+[ 1463.620945]  [<c1217603>] ? tty_register_driver+0x113/0x170                      
+[ 1463.620945]  [<c123030d>] ? uart_register_driver+0x14d/0x1b0                     
+[ 1463.620945]  [<d27ba000>] ? 0xd27b9fff                                           
+[ 1463.620945]  [<d27ba03a>] my_uart_init+0x3a/0x1000 [uartDriver]                  
+[ 1463.620945]  [<c1027b3f>] ? set_memory_nx+0x5f/0x70                              
+[ 1463.620945]  [<c1001222>] do_one_initcall+0x112/0x160                            
+[ 1463.620945]  [<c1329768>] ? set_section_ro_nx+0x54/0x59                          
+[ 1463.620945]  [<c107458d>] load_module+0x186d/0x1e10                              
+[ 1463.620945]  [<c1074b86>] ? sys_init_module+0x56/0xb0                            
+[ 1463.620945]  [<c1074ba8>] sys_init_module+0x78/0xb0                              
+[ 1463.620945]  [<c132da68>] syscall_call+0x7/0xb                                   
+[ 1463.620945] Code:  Bad EIP value.                                                
+[ 1463.620945] EIP: [<00000000>] 0x0 SS:ESP 0068:ccd8bdb0                           
+[ 1463.620945] CR2: 0000000000000000                                                
+[ 1463.836205] ---[ end trace 00c8abd60035dd0e ]---
+
+root@clanton:~# insmod uartDriver.ko                                                
+[   55.065411] uart_config_port                                                     
+[   55.068341] uart_type                                                            
+[   55.070783] ttyUU0 at MMIO 0x9000f000 (irq = 4) is a unknown                     
+[   55.088736] BUG: unable to handle kernel NULL pointer dereference at   (null)    
+[   55.090042] IP: [<  (null)>]   (null)                                            
+[   55.090042] *pdpt = 000000000cc76001 *pde = 0000000000000000                     
+[   55.090042] Oops: 0010 [#1]                                                      
+[   55.090042] Modules linked in: uartDriver(O+) arc4 iwldvm mac80211 evdev usbhid n
+[   55.090042] Pid: 1440, comm: insmod Tainted: G         C O 3.8.7-yocto-standard 2
+[   55.090042] EIP: 0060:[<00000000>] EFLAGS: 00010046 CPU: 0                       
+[   55.090042] EIP is at 0x0                                                        
+[   55.090042] EAX: d2816000 EBX: cd04b000 ECX: d28160c0 EDX: 00000000              
+[   55.090042] ESI: d2816000 EDI: 00000246 EBP: cd315e40 ESP: cd315db0              
+[   55.090042]  DS: 007b ES: 007b FS: 0000 GS: 0033 SS: 0068                        
+[   55.090042] CR0: 8005003b CR2: b775e000 CR3: 0d336000 CR4: 00100030              
+[   55.090042] DR0: 00000000 DR1: 00000000 DR2: 00000000 DR3: 00000000              
+[   55.090042] DR6: ffff0ff0 DR7: 00000400                                          
+[   55.090042] Process insmod (pid: 1440, ti=cd314000 task=cb71f750 task.ti=cd31400)
+[   55.090042] Stack:                                                               
+[   55.090042]  c12311cc c1463e74 c1440304 c1440304 d28150cb 00000000 cd315df4 00004
+[   55.090042]  c14445e2 d2816140 cb538280 c1440304 d28150cb 00000004 c14445e2 00000
+[   55.090042]  cd04b058 4f494d4d 39783020 66303030 00303030 cd04b098 cd315e24 c1213
+[   55.090042] Call Trace:                                                          
+[   55.090042]  [<c12311cc>] ? uart_add_one_port+0x26c/0x3d0                        
+[   55.090042]  [<c1217603>] ? tty_register_driver+0x113/0x170                      
+[   55.090042]  [<c123030d>] ? uart_register_driver+0x14d/0x1b0                     
+[   55.090042]  [<d26b2000>] ? 0xd26b1fff                                           
+[   55.090042]  [<d26b203a>] my_uart_init+0x3a/0x1000 [uartDriver]                  
+[   55.090042]  [<c1027b3f>] ? set_memory_nx+0x5f/0x70                              
+[   55.090042]  [<c1001222>] do_one_initcall+0x112/0x160                            
+[   55.090042]  [<c1329768>] ? set_section_ro_nx+0x54/0x59                          
+[   55.090042]  [<c107458d>] load_module+0x186d/0x1e10                              
+[   55.090042]  [<c1074b86>] ? sys_init_module+0x56/0xb0                            
+[   55.090042]  [<c1074ba8>] sys_init_module+0x78/0xb0                              
+[   55.090042]  [<c132da68>] syscall_call+0x7/0xb                                   
+[   55.090042] Code:  Bad EIP value.                                                
+[   55.090042] EIP: [<00000000>] 0x0 SS:ESP 0068:cd315db0                           
+[   55.090042] CR2: 0000000000000000                                                
+[   55.311727] ---[ end trace 7f63c2412071efb2 ]---  

@@ -1,0 +1,84 @@
+wget http://repo.opkg.net/galileo/i586/libopencv-contrib-dev_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-core2.4_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-features2d-dev_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-photo2.4_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-objdetect2.4_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-photo-dev_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-ml2.4_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-imgproc2.4_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/opencv-dev_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/python-opencv_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-legacy2.4_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-core-dev_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-ocl-dev_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-ocl2.4_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/opencv-staticdev_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-calib3d2.4_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-stitching-dev_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-highgui2.4_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-highgui-dev_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-superres-dev_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-videostab-dev_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-features2d2.4_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-video-dev_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-nonfree2.4_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-imgproc-dev_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-stitching2.4_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-video2.4_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-gpu-dev_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-videostab2.4_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-nonfree-dev_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-calib3d-dev_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/opencv-dbg_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/opencv-apps_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-flann-dev_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-legacy-dev_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/opencv_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-gpu2.4_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-flann2.4_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-objdetect-dev_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-superres2.4_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-ml-dev_2.4.9-r1_i586.ipk
+
+wget http://repo.opkg.net/galileo/i586/libopencv-contrib2.4_2.4.9-r1_i586.ipk
+

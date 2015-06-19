@@ -1,0 +1,84 @@
+	opkg install libopencv-contrib-dev_2.4.9-r1_i586.ipk
+
+opkg install libopencv-core2.4_2.4.9-r1_i586.ipk
+
+opkg install libopencv-features2d-dev_2.4.9-r1_i586.ipk
+
+opkg install libopencv-photo2.4_2.4.9-r1_i586.ipk
+
+opkg install libopencv-objdetect2.4_2.4.9-r1_i586.ipk
+
+opkg install libopencv-photo-dev_2.4.9-r1_i586.ipk
+
+opkg install libopencv-ml2.4_2.4.9-r1_i586.ipk
+
+opkg install libopencv-imgproc2.4_2.4.9-r1_i586.ipk
+
+opkg install opencv-dev_2.4.9-r1_i586.ipk
+
+opkg install python-opencv_2.4.9-r1_i586.ipk
+
+opkg install libopencv-legacy2.4_2.4.9-r1_i586.ipk
+
+opkg install libopencv-core-dev_2.4.9-r1_i586.ipk
+
+opkg install libopencv-ocl-dev_2.4.9-r1_i586.ipk
+
+opkg install libopencv-ocl2.4_2.4.9-r1_i586.ipk
+
+opkg install opencv-staticdev_2.4.9-r1_i586.ipk
+
+opkg install libopencv-calib3d2.4_2.4.9-r1_i586.ipk
+
+opkg install libopencv-stitching-dev_2.4.9-r1_i586.ipk
+
+opkg install libopencv-highgui2.4_2.4.9-r1_i586.ipk
+
+opkg install libopencv-highgui-dev_2.4.9-r1_i586.ipk
+
+opkg install libopencv-superres-dev_2.4.9-r1_i586.ipk
+
+opkg install libopencv-videostab-dev_2.4.9-r1_i586.ipk
+
+opkg install libopencv-features2d2.4_2.4.9-r1_i586.ipk
+
+opkg install libopencv-video-dev_2.4.9-r1_i586.ipk
+
+opkg install libopencv-nonfree2.4_2.4.9-r1_i586.ipk
+
+opkg install libopencv-imgproc-dev_2.4.9-r1_i586.ipk
+
+opkg install libopencv-stitching2.4_2.4.9-r1_i586.ipk
+
+opkg install libopencv-video2.4_2.4.9-r1_i586.ipk
+
+opkg install libopencv-gpu-dev_2.4.9-r1_i586.ipk
+
+opkg install libopencv-videostab2.4_2.4.9-r1_i586.ipk
+
+opkg install libopencv-nonfree-dev_2.4.9-r1_i586.ipk
+
+opkg install libopencv-calib3d-dev_2.4.9-r1_i586.ipk
+
+opkg install opencv-dbg_2.4.9-r1_i586.ipk
+
+opkg install opencv-apps_2.4.9-r1_i586.ipk
+
+opkg install libopencv-flann-dev_2.4.9-r1_i586.ipk
+
+opkg install libopencv-legacy-dev_2.4.9-r1_i586.ipk
+
+opkg install opencv_2.4.9-r1_i586.ipk
+
+opkg install libopencv-gpu2.4_2.4.9-r1_i586.ipk
+
+opkg install libopencv-flann2.4_2.4.9-r1_i586.ipk
+
+opkg install libopencv-objdetect-dev_2.4.9-r1_i586.ipk
+
+opkg install libopencv-superres2.4_2.4.9-r1_i586.ipk
+
+opkg install libopencv-ml-dev_2.4.9-r1_i586.ipk
+
+opkg install libopencv-contrib2.4_2.4.9-r1_i586.ipk
+
