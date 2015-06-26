@@ -1,0 +1,9 @@
+
+
+So Far:
+	- The driver gets registered without error
+	- Most of the functions are called without error
+
+To Do
+	- Resolve the irq17 contention error
+	- Resolve the memory error while reloading the module

@@ -18,19 +18,20 @@
 
 // ssh root@10.42.0.81
 //g-serial vendor=0x8086 product=0xBABE
-
-/*
+// setserial /dev/ttyUU0 uart 16550A
+/* root@10.42.0.81:/home/root
 
 Things to do 
 
  - Read 
     - docs/uartDriverImplementation.pdf
     - docs/useOfFunctions.pdf
+    - docs/serialTweaks.pdf 
 
 
 
 */
-
+//setserial ttyUU0 address 0x9000F000 irq 17
 
 
 #define UART_MAJOR        200  /* You've to get this assigned */
@@ -152,7 +153,7 @@ static const char * uart_type(struct uart_port *port)
 {
   char *C;
   printk(KERN_INFO "uart_type\n");
-  return NULL;
+  return port->type;
 }
 
 // uart_type called when accessing - /proc/tty/driver/uart file
@@ -241,23 +242,27 @@ static struct uart_port my_uart_port = {
 /************* platform driver *************/
 int uart_plat_suspend(struct platform_device *dev, pm_message_t s)
 {
+  printk(KERN_INFO " uart_plat_suspend \n");
   uart_suspend_port(&uart_reg, &my_uart_port);
   return 0;
 }
 int uart_plat_resume(struct platform_device *dev)
 {
+  printk(KERN_INFO " uart_plat_resume \n");
   uart_resume_port(&uart_reg, &my_uart_port);
   return 0;
 }
 int uart_plat_probe(struct platform_device *dev)
 {
   /* Use 'usb_uart_driver' to drive 'usb_uart_port[i]' */
+  printk(KERN_INFO " uart_plat_probe \n");
   uart_add_one_port(&uart_reg, &my_uart_port);
   platform_set_drvdata(dev, &my_uart_port);
   return 0;
 }
 int uart_plat_remove(struct platform_device *dev)
 {
+  printk(KERN_INFO " uart_plat_remove \n");
   platform_set_drvdata(dev, NULL);
   /* remove port to uart driver */
   uart_remove_one_port(&uart_reg, &my_uart_port);
@@ -276,7 +281,7 @@ struct platform_driver uart_plat_driver =
 
 struct platform_device *uart_plat_device;
 
-/********* init and exit *********/
+//******** init and exit ********
 int __init uart_init(void)
 {
   int retval;
@@ -319,7 +324,8 @@ void __exit uart_exit(void)
 }
 module_exit(uart_exit);
 
-// /*
+
+
 // static int __init my_uart_init(void)
 // {
 //    int retval;
@@ -353,8 +359,6 @@ module_exit(uart_exit);
 
 // module_init(my_uart_init);
 // module_exit(my_uart_exit);
-
-
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Abel Paul Babu");

@@ -122,3 +122,641 @@ root@clanton:~# insmod uartDriver.ko
 [   55.090042] EIP: [<00000000>] 0x0 SS:ESP 0068:cd315db0                           
 [   55.090042] CR2: 0000000000000000                                                
 [   55.311727] ---[ end trace 7f63c2412071efb2 ]---  
+
+[  622.665251] uart_config_port                                                      
+[  622.668181] uart_type                                                             
+[  622.670609] ttyUU0 at MMIO 0x9010f000 (irq = 17) is a unknown                     
+[  622.688402] BUG: unable to handle kernel NULL pointer dereference at   (null)     
+[  622.690041] IP: [<  (null)>]   (null)                                             
+[  622.690041] *pdpt = 000000000ccba001 *pde = 0000000000000000                      
+[  622.690041] Oops: 0010 [#1]                                                       
+[  622.690041] Modules linked in: uartDriver(O+) arc4 iwldvm evdev mac80211 usbhid bn
+[  622.690041] Pid: 1451, comm: insmod Tainted: G         C O 3.8.7-yocto-standard #2
+[  622.690041] EIP: 0060:[<00000000>] EFLAGS: 00010046 CPU: 0                        
+[  622.690041] EIP is at 0x0                                                         
+[  622.690041] EAX: d28fa000 EBX: cd39e000 ECX: d28fa0c0 EDX: 00000000               
+[  622.690041] ESI: d28fa000 EDI: 00000246 EBP: cb49be40 ESP: cb49bdb0               
+[  622.690041]  DS: 007b ES: 007b FS: 0000 GS: 0033 SS: 0068                         
+[  622.690041] CR0: 8005003b CR2: b77d5000 CR3: 0ce59000 CR4: 00100030               
+[  622.690041] DR0: 00000000 DR1: 00000000 DR2: 00000000 DR3: 00000000               
+[  622.690041] DR6: ffff0ff0 DR7: 00000400                                           
+[  622.690041] Process insmod (pid: 1451, ti=cb49a000 task=ce8143b0 task.ti=cb49a000)
+[  622.690041] Stack:                                                                
+[  622.690041]  c12311cc c1463e74 c1440304 c1440304 d28f90cb 00000000 cb49bdf4 000001
+[  622.690041]  c14445e2 d28fa140 cd059680 c1440304 d28f90cb 00000011 c14445e2 000000
+[  622.690041]  cd39e058 4f494d4d 39783020 66303130 00303030 cd39e098 cb49be24 c12173
+[  622.690041] Call Trace:                                                           
+[  622.690041]  [<c12311cc>] ? uart_add_one_port+0x26c/0x3d0                         
+[  622.690041]  [<c1217603>] ? tty_register_driver+0x113/0x170                       
+[  622.690041]  [<c123030d>] ? uart_register_driver+0x14d/0x1b0                      
+[  622.690041]  [<d2735000>] ? 0xd2734fff                                            
+[  622.690041]  [<d273503a>] my_uart_init+0x3a/0x1000 [uartDriver]                   
+[  622.690041]  [<c1027b3f>] ? set_memory_nx+0x5f/0x70                               
+[  622.690041]  [<c1001222>] do_one_initcall+0x112/0x160                             
+[  622.690041]  [<c1329768>] ? set_section_ro_nx+0x54/0x59                           
+[  622.690041]  [<c107458d>] load_module+0x186d/0x1e10                               
+[  622.690041]  [<c1074b86>] ? sys_init_module+0x56/0xb0                             
+[  622.690041]  [<c1074ba8>] sys_init_module+0x78/0xb0                               
+[  622.690041]  [<c132da68>] syscall_call+0x7/0xb                                    
+[  622.690041] Code:  Bad EIP value.                                                 
+[  622.690041] EIP: [<00000000>] 0x0 SS:ESP 0068:cb49bdb0                            
+[  622.690041] CR2: 0000000000000000                                                 
+[  622.911407] ---[ end trace 9542be8b923dc7f2 ]---  
+
+
+
+[   89.135262] uart_config_port
+[   89.138174] uart_type
+[   89.140601] ttyUU0 at MMIO 0x9000f000 (irq = 17) is a unknown
+[   89.153463] BUG: unable to handle kernel NULL pointer dereference at   (null)
+[   89.160044] IP: [<  (null)>]   (null)
+[   89.160044] *pdpt = 000000000b6df001 *pde = 0000000000000000 
+[   89.160044] Oops: 0010 [#1] 
+[   89.160044] Modules linked in: uartDriver(O+) evdev usbhid btusb bluetooth iwlwifi cfg80211 rfkill adc1x8s102(C) industrialio_triggered_buffer kfifo_buf industrialio spi_pxa2xx spi_pxa2xx_pci spidev i2c_dev at24 pca9685 regmap_i2c gpio_pca953x intel_qrk_gip gpio_sch uio usb_storage pch_udc udc_core ipv6 efivars mmc_block ehci_pci ohci_hcd ehci_hcd sdhci_pci usbcore sdhci led_class stmmac mmc_core usb_common
+[   89.160044] Pid: 1959, comm: insmod Tainted: G         C O 3.8.7-yocto-standard #2 Intel Corp. QUARK/GalileoGen2
+[   89.160044] EIP: 0060:[<00000000>] EFLAGS: 00010046 CPU: 0
+[   89.160044] EIP is at 0x0
+[   89.160044] EAX: d275c000 EBX: cb50ecc0 ECX: d275c0c0 EDX: 00000000
+[   89.160044] ESI: d275c000 EDI: 00000246 EBP: cb485e40 ESP: cb485db0
+[   89.160044]  DS: 007b ES: 007b FS: 0000 GS: 0033 SS: 0068
+[   89.160044] CR0: 8005003b CR2: b7779000 CR3: 0b6bc000 CR4: 00100030
+[   89.160044] DR0: 00000000 DR1: 00000000 DR2: 00000000 DR3: 00000000
+[   89.160044] DR6: ffff0ff0 DR7: 00000400
+[   89.160044] Process insmod (pid: 1959, ti=cb484000 task=cd417750 task.ti=cb484000)
+[   89.160044] Stack:
+[   89.160044]  c12311cc c1463e74 c1440304 c1440304 d275b0e7 00000000 cb485df4 00000011
+[   89.160044]  c14445e2 d275c140 000002ee c1440304 d275b0e7 00000011 c14445e2 00000000
+[   89.160044]  cb50ed18 4f494d4d 39783020 66303030 00303030 00000028 cb485e24 00000000
+[   89.160044] Call Trace:
+[   89.160044]  [<c12311cc>] ? uart_add_one_port+0x26c/0x3d0
+[   89.160044]  [<d2660000>] ? 0xd265ffff
+[   89.160044]  [<c1329273>] ? printk+0x3d/0x3f
+[   89.160044]  [<d2660000>] ? 0xd265ffff
+[   89.160044]  [<d266005a>] my_uart_init+0x5a/0x1000 [uartDriver]
+[   89.160044]  [<c1001222>] do_one_initcall+0x112/0x160
+[   89.160044]  [<c1329768>] ? set_section_ro_nx+0x54/0x59
+[   89.160044]  [<c107458d>] load_module+0x186d/0x1e10
+[   89.160044]  [<c1074b86>] ? sys_init_module+0x56/0xb0
+[   89.160044]  [<c1074ba8>] sys_init_module+0x78/0xb0
+[   89.160044]  [<c132da68>] syscall_call+0x7/0xb
+[   89.160044] Code:  Bad EIP value.
+[   89.160044] EIP: [<00000000>] 0x0 SS:ESP 0068:cb485db0
+[   89.160044] CR2: 0000000000000000
+[   89.364477] ---[ end trace 7622decd2ad50a3c ]---
+
+
+[  324.788265] The process has started 
+[  324.792838] successfully Added Driver, Error Code :0
+[  324.811592] successfully Added Port, Error Code :0
+[  324.816425]  I am alive !! 
+
+
+
+execve("./test", ["./test"], [/* 16 vars */]) = 0
+brk(0)                                  = 0x8af8000
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7735000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat64(3, {st_mode=S_IFREG|0644, st_size=8193, ...}) = 0
+mmap2(NULL, 8193, PROT_READ, MAP_PRIVATE, 3, 0) = 0xb7732000
+close(3)                                = 0
+open("/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0\260&\336M4\0\0\0"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0755, st_size=9397850, ...}) = 0
+mmap2(0x4ddc9000, 1534652, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x4ddc9000
+mmap2(0x4df3a000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x171) = 0x4df3a000
+mmap2(0x4df3d000, 10940, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x4df3d000
+close(3)                                = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7731000
+set_thread_area({entry_number:-1 -> 6, base_addr:0xb77316c0, limit:1048575, seg_32bit:1, contents:0, read_exec_only:0, limit_in_pages:1, seg_not_present:0, useable:1}) = 0
+mprotect(0x4df3a000, 8192, PROT_READ)   = 0
+mprotect(0x4c9ef000, 4096, PROT_READ)   = 0
+munmap(0xb7732000, 8193)                = 0
+open("/dev/ttyUU0", O_RDWR)             = 3
+fstat64(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(136, 0), ...}) = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7734000
+write(1, "The value of fd: 3\n", 19The value of fd: 3
+)    = 19
+write(3, "X", 1)                        = -1 EIO (Input/output error)
+exit_group(0)                           = ?
++++ exited with 0 +++
+
+
+
+execve("./test", ["./test"], [/* 17 vars */]) = 0
+brk(0)                                  = 0x937f000
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb77a3000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat64(3, {st_mode=S_IFREG|0644, st_size=8193, ...}) = 0
+mmap2(NULL, 8193, PROT_READ, MAP_PRIVATE, 3, 0) = 0xb77a0000
+close(3)                                = 0
+open("/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0\260&\336M4\0\0\0"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0755, st_size=9397850, ...}) = 0
+mmap2(0x4ddc9000, 1534652, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x4ddc9000
+mmap2(0x4df3a000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x171) = 0x4df3a000
+mmap2(0x4df3d000, 10940, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x4df3d000
+close(3)                                = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb779f000
+set_thread_area({entry_number:-1 -> 6, base_addr:0xb779f6c0, limit:1048575, seg_32bit:1, contents:0, read_exec_only:0, limit_in_pages:1, seg_not_present:0, useable:1}) = 0
+mprotect(0x4df3a000, 8192, PROT_READ)   = 0
+mprotect(0x4c9ef000, 4096, PROT_READ)   = 0
+munmap(0xb77a0000, 8193)                = 0
+open("/dev/ttyUU0", O_RDWR|O_NOCTTY|O_SYNC) = 3
+write(3, "X", 1)                        = -1 EIO (Input/output error)
+read(3, 0xbfbcccc7, 1)                  = -1 EIO (Input/output error)
+fstat64(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(136, 0), ...}) = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb77a2000
+write(1, "Read byte \0\n", 12Read byte 
+)          = 12
+
+
+execve("./test", ["./test"], [/* 16 vars */]) = 0
+brk(0)                                  = 0x94df000
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb77f8000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat64(3, {st_mode=S_IFREG|0644, st_size=8193, ...}) = 0
+mmap2(NULL, 8193, PROT_READ, MAP_PRIVATE, 3, 0) = 0xb77f5000
+close(3)                                = 0
+open("/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0\260&\336M4\0\0\0"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0755, st_size=9397850, ...}) = 0
+mmap2(0x4ddc9000, 1534652, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x4ddc9000
+mmap2(0x4df3a000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x171) = 0x4df3a000
+mmap2(0x4df3d000, 10940, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x4df3d000
+close(3)                                = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb77f4000
+set_thread_area({entry_number:-1 -> 6, base_addr:0xb77f46c0, limit:1048575, seg_32bit:1, contents:0, read_exec_only:0, limit_in_pages:1, seg_not_present:0, useable:1}) = 0
+mprotect(0x4df3a000, 8192, PROT_READ)   = 0
+mprotect(0x4c9ef000, 4096, PROT_READ)   = 0
+munmap(0xb77f5000, 8193)                = 0
+open("/dev/ttyUU0", O_RDWR|O_NOCTTY|O_SYNC) = 3
+fstat64(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(136, 0), ...}) = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb77f7000
+write(1, "value of fd:3\n", 14value of fd:3
+)         = 14
+write(3, "X", 1)                        = -1 EIO (Input/output error)
+read(3, 0xbf9b3d07, 1)                  = -1 EIO (Input/output error)
+write(1, "Read byte \0\n", 12Read byte 
+)          = 12
+exit_group(0)                           = ?
+
+
+    Tainted: G  
+uartDriver 12979 0 - Live 0xd276d000 (O)
+evdev 17377 0 - Live 0xd2767000
+usbhid 23097 0 - Live 0xd2760000
+btusb 17950 0 - Live 0xd2753000
+bluetooth 196341 1 btusb, Live 0xd2ba3000
+iwlwifi 77436 0 - Live 0xd277b000
+cfg80211 425317 1 iwlwifi, Live 0xd27ae000
+rfkill 20724 2 bluetooth,cfg80211, Live 0xd2744000
+adc1x8s102 12766 0 - Live 0xd273c000 (C)
+industrialio_triggered_buffer 12686 1 adc1x8s102, Live 0xd274e000
+kfifo_buf 13032 1 industrialio_triggered_buffer, Live 0xd275b000
+industrialio 43160 3 adc1x8s102,industrialio_triggered_buffer,kfifo_buf, Live 0xd2730000
+spi_pxa2xx 21688 0 - Live 0xd26c7000
+spi_pxa2xx_pci 13049 1 spi_pxa2xx, Live 0xd26ac000
+spidev 13053 0 - Live 0xd26b8000
+i2c_dev 13052 0 - Live 0xd26a7000
+at24 12949 0 - Live 0xd269f000
+pca9685 13582 0 - Live 0xd2691000
+regmap_i2c 12714 1 pca9685, Live 0xd26b3000
+gpio_pca953x 17384 3 - Live 0xd26be000
+intel_qrk_gip 24197 3 - Live 0xd268a000
+gpio_sch 17990 0 - Live 0xd267d000
+uio 14412 2 intel_qrk_gip,gpio_sch, Live 0xd2685000
+usb_storage 46592 0 - Live 0xd2654000
+pch_udc 31578 0 - Live 0xd2647000
+udc_core 14227 1 pch_udc, Live 0xd2678000
+ipv6 234805 14 - Live 0xd26f5000
+efivars 22958 0 - Live 0xd2640000
+mmc_block 26513 2 - Live 0xd2634000
+ehci_pci 12656 0 - Live 0xd2623000
+ohci_hcd 26434 0 - Live 0xd2670000
+ehci_hcd 44472 1 ehci_pci, Live 0xd2664000
+sdhci_pci 18190 0 - Live 0xd2696000
+usbcore 144229 6 usbhid,btusb,usb_storage,ehci_pci,ohci_hcd,ehci_hcd, Live 0xd26d0000
+sdhci 27448 1 sdhci_pci, Live 0xd261b000
+stmmac 52518 0 - Live 0xd301d000
+led_class 13282 1 sdhci, Live 0xd262b000
+mmc_core 97063 3 mmc_block,sdhci_pci,sdhci, Live 0xd2cb8000
+usb_common 12481 2 udc_core,usbcore, Live 0xd27a9000
+
+
+The first column contains the name of the module.
+
+The second column refers to the memory size of the module, in bytes.
+
+The third column lists how many instances of the module are currently loaded. A value of zero represents an unloaded module.
+
+The fourth column states if the module depends upon another module to be present in order to function, and lists those other modules.
+
+The fifth column lists what load state the module is in: Live, Loading, or Unloading are the only possible values.
+
+The sixth column lists the current kernel memory offset for the loaded module. This information can be useful for debugging purposes, or for profiling tools such as oprofile. 
+
+
+
+
+root@clanton:~# setserial -g /dev/ttyS*
+/dev/ttyS0, UART: 16550A, Port: 0x0000, IRQ: 17
+/dev/ttyS1, UART: 16550A, Port: 0x0000, IRQ: 17
+root@clanton:~# setserial -g /dev/tty  
+setserial: can't get serial info: Inappropriate ioctl for device
+root@clanton:~# setserial -g /dev/tty*
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+/dev/ttyS0, UART: 16550A, Port: 0x0000, IRQ: 17
+/dev/ttyS1, UART: 16550A, Port: 0x0000, IRQ: 17
+/dev/ttyUU0, UART: unknown, Port: 0x0000, IRQ: 17, Flags: fourport
+setserial: /dev/ttyp0: Input/output error
+setserial: /dev/ttyp1: Input/output error
+setserial: /dev/ttyp2: Input/output error
+setserial: /dev/ttyp3: Input/output error
+setserial: /dev/ttyp4: Input/output error
+setserial: /dev/ttyp5: Input/output error
+setserial: /dev/ttyp6: Input/output error
+setserial: /dev/ttyp7: Input/output error
+setserial: /dev/ttyp8: Input/output error
+setserial: /dev/ttyp9: Input/output error
+setserial: /dev/ttypa: Input/output error
+setserial: /dev/ttypb: Input/output error
+setserial: /dev/ttypc: Input/output error
+setserial: /dev/ttypd: Input/output error
+setserial: /dev/ttype: Input/output error
+setserial: /dev/ttypf: Input/output error
+setserial: /dev/ttyq0: Input/output error
+setserial: /dev/ttyq1: Input/output error
+setserial: /dev/ttyq2: Input/output error
+setserial: /dev/ttyq3: Input/output error
+setserial: /dev/ttyq4: Input/output error
+setserial: /dev/ttyq5: Input/output error
+setserial: /dev/ttyq6: Input/output error
+setserial: /dev/ttyq7: Input/output error
+setserial: /dev/ttyq8: Input/output error
+setserial: /dev/ttyq9: Input/output error
+setserial: /dev/ttyqa: Input/output error
+setserial: /dev/ttyqb: Input/output error
+setserial: /dev/ttyqc: Input/output error
+setserial: /dev/ttyqd: Input/output error
+setserial: /dev/ttyqe: Input/output error
+setserial: /dev/ttyqf: Input/output error
+root@clanton:~# 
+root@clanton:~# 
+root@clanton:~# 
+root@clanton:~# cd/de
+-sh: cd/de: No such file or directory
+root@clanton:~# cd /dev/
+root@clanton:/dev# ls
+block               stdin               ttyp9               vcs56
+bus                 stdout              ttypa               vcs57
+char                tty                 ttypb               vcs58
+console             tty0                ttypc               vcs59
+core                tty1                ttypd               vcs6
+cpu                 tty10               ttype               vcs60
+cpu0                tty11               ttypf               vcs61
+cpu_dma_latency     tty12               ttyq0               vcs62
+disk                tty13               ttyq1               vcs63
+esramtest0          tty14               ttyq2               vcs7
+event0              tty15               ttyq3               vcs8
+event1              tty16               ttyq4               vcs9
+fd                  tty17               ttyq5               vcsa
+full                tty18               ttyq6               vcsa1
+hpet                tty19               ttyq7               vcsa10
+i2c-0               tty2                ttyq8               vcsa11
+iio:device0         tty20               ttyq9               vcsa12
+imrtest0            tty21               ttyqa               vcsa13
+initctl             tty22               ttyqb               vcsa14
+input               tty23               ttyqc               vcsa15
+kmem                tty24               ttyqd               vcsa16
+kmsg                tty25               ttyqe               vcsa17
+log                 tty26               ttyqf               vcsa18
+loop-control        tty27               udev_network_queue  vcsa19
+loop0               tty28               uio0                vcsa2
+loop1               tty29               uio1                vcsa20
+mem                 tty3                urandom             vcsa21
+mmcblk0             tty30               vcs                 vcsa22
+mmcblk0p1           tty31               vcs1                vcsa23
+mmcblk0p2           tty32               vcs10               vcsa24
+mqueue              tty33               vcs11               vcsa25
+msr0                tty34               vcs12               vcsa26
+mtab                tty35               vcs13               vcsa27
+network_latency     tty36               vcs14               vcsa28
+network_throughput  tty37               vcs15               vcsa29
+null                tty38               vcs16               vcsa3
+port                tty39               vcs17               vcsa30
+ptmx                tty4                vcs18               vcsa31
+pts                 tty40               vcs19               vcsa32
+ptyp0               tty41               vcs2                vcsa33
+ptyp1               tty42               vcs20               vcsa34
+ptyp2               tty43               vcs21               vcsa35
+ptyp3               tty44               vcs22               vcsa36
+ptyp4               tty45               vcs23               vcsa37
+ptyp5               tty46               vcs24               vcsa38
+ptyp6               tty47               vcs25               vcsa39
+ptyp7               tty48               vcs26               vcsa4
+ptyp8               tty49               vcs27               vcsa40
+ptyp9               tty5                vcs28               vcsa41
+ptypa               tty50               vcs29               vcsa42
+ptypb               tty51               vcs3                vcsa43
+ptypc               tty52               vcs30               vcsa44
+ptypd               tty53               vcs31               vcsa45
+ptype               tty54               vcs32               vcsa46
+ptypf               tty55               vcs33               vcsa47
+ptyq0               tty56               vcs34               vcsa48
+ptyq1               tty57               vcs35               vcsa49
+ptyq2               tty58               vcs36               vcsa5
+ptyq3               tty59               vcs37               vcsa50
+ptyq4               tty6                vcs38               vcsa51
+ptyq5               tty60               vcs39               vcsa52
+ptyq6               tty61               vcs4                vcsa53
+ptyq7               tty62               vcs40               vcsa54
+ptyq8               tty63               vcs41               vcsa55
+ptyq9               tty7                vcs42               vcsa56
+ptyqa               tty8                vcs43               vcsa57
+ptyqb               tty9                vcs44               vcsa58
+ptyqc               ttyS0               vcs45               vcsa59
+ptyqd               ttyS1               vcs46               vcsa6
+ptyqe               ttyUU0              vcs47               vcsa60
+ptyqf               ttyp0               vcs48               vcsa61
+ram0                ttyp1               vcs49               vcsa62
+random              ttyp2               vcs5                vcsa63
+rfkill              ttyp3               vcs50               vcsa7
+root                ttyp4               vcs51               vcsa8
+rtc                 ttyp5               vcs52               vcsa9
+rtc0                ttyp6               vcs53               zero
+spidev1.0           ttyp7               vcs54
+stderr              ttyp8               vcs55
+root@clanton:/dev# setserial -g ttyUU0 uart 16550A
+ttyUU0, UART: unknown, Port: 0x0000, IRQ: 17, Flags: fourport
+setserial: uart: No such file or directory
+setserial: 16550A: No such file or directory
+root@clanton:/dev# setserial -g ttyUU0 UART 16550A
+ttyUU0, UART: unknown, Port: 0x0000, IRQ: 17, Flags: fourport
+setserial: UART: No such file or directory
+setserial: 16550A: No such file or directory
+root@clanton:/dev# setserial  ttyUU0 UART 16550A
+root@clanton:/dev# setserial -g /dev/tty*
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+setserial: can't get serial info: Inappropriate ioctl for device
+/dev/ttyS0, UART: 16550A, Port: 0x0000, IRQ: 17
+/dev/ttyS1, UART: 16550A, Port: 0x0000, IRQ: 17
+/dev/ttyUU0, UART: 16550A, Port: 0x0000, IRQ: 17, Flags: fourport
+setserial: /dev/ttyp0: Input/output error
+setserial: /dev/ttyp1: Input/output error
+setserial: /dev/ttyp2: Input/output error
+setserial: /dev/ttyp3: Input/output error
+setserial: /dev/ttyp4: Input/output error
+setserial: /dev/ttyp5: Input/output error
+setserial: /dev/ttyp6: Input/output error
+setserial: /dev/ttyp7: Input/output error
+setserial: /dev/ttyp8: Input/output error
+setserial: /dev/ttyp9: Input/output error
+setserial: /dev/ttypa: Input/output error
+setserial: /dev/ttypb: Input/output error
+setserial: /dev/ttypc: Input/output error
+setserial: /dev/ttypd: Input/output error
+setserial: /dev/ttype: Input/output error
+setserial: /dev/ttypf: Input/output error
+setserial: /dev/ttyq0: Input/output error
+setserial: /dev/ttyq1: Input/output error
+setserial: /dev/ttyq2: Input/output error
+setserial: /dev/ttyq3: Input/output error
+setserial: /dev/ttyq4: Input/output error
+setserial: /dev/ttyq5: Input/output error
+setserial: /dev/ttyq6: Input/output error
+setserial: /dev/ttyq7: Input/output error
+setserial: /dev/ttyq8: Input/output error
+setserial: /dev/ttyq9: Input/output error
+setserial: /dev/ttyqa: Input/output error
+setserial: /dev/ttyqb: Input/output error
+setserial: /dev/ttyqc: Input/output error
+setserial: /dev/ttyqd: Input/output error
+setserial: /dev/ttyqe: Input/output error
+setserial: /dev/ttyqf: Input/output error
+root@clanton:/dev# 
+root@clanton:/dev# 
+root@clanton:/dev# 
+root@clanton:/dev# cd
+root@clanton:~# ./test 
+value of fd:3
+Read byte 
+root@clanton:~# strace ./test 
+execve("./test", ["./test"], [/* 17 vars */]) = 0
+brk(0)                                  = 0x8580000
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb771b000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat64(3, {st_mode=S_IFREG|0644, st_size=8193, ...}) = 0
+mmap2(NULL, 8193, PROT_READ, MAP_PRIVATE, 3, 0) = 0xb7718000
+close(3)                                = 0
+open("/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0\260&\336M4\0\0\0"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0755, st_size=9397850, ...}) = 0
+mmap2(0x4ddc9000, 1534652, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x4ddc9000
+mmap2(0x4df3a000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x171) = 0x4df3a000
+mmap2(0x4df3d000, 10940, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x4df3d000
+close(3)                                = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7717000
+set_thread_area({entry_number:-1 -> 6, base_addr:0xb77176c0, limit:1048575, seg_32bit:1, contents:0, read_exec_only:0, limit_in_pages:1, seg_not_present:0, useable:1}) = 0
+mprotect(0x4df3a000, 8192, PROT_READ)   = 0
+mprotect(0x4c9ef000, 4096, PROT_READ)   = 0
+munmap(0xb7718000, 8193)                = 0
+open("/dev/ttyUU0", O_RDWR|O_NOCTTY|O_SYNC) = 3
+fstat64(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(136, 0), ...}) = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb771a000
+write(1, "value of fd:3\n", 14value of fd:3
+)         = 14
+write(3, "A", 1)                        = -1 EIO (Input/output error)
+read(3, 0xbfb78f17, 1)                  = -1 EIO (Input/output error)
+write(1, "Read byte \0\n", 12Read byte 
+)          = 12
+exit_group(0)                           = ?
++++ exited with 0 +++
+root@clanton:~# 
+root@clanton:~# 
+root@clanton:~# 
+root@clanton:~# dmesg | tail -5
+[ 1092.894003] genirq: Flags mismatch irq 17. 00000000 (uart) vs. 00000080 (serial)
+[ 1103.461593] uart_startup
+[ 1103.464194] genirq: Flags mismatch irq 17. 00000000 (uart) vs. 00000080 (serial)
+[ 1110.554110] uart_startup
+[ 1110.556914] genirq: Flags mismatch irq 17. 00000000 (uart) vs. 00000080 (serial)
+root@clanton:~# dmesg | tail -10
+[  485.674979] uart_type
+[ 1086.200972] uart_request_port
+[ 1086.204046] uart_startup
+[ 1086.206635] genirq: Flags mismatch irq 17. 00000000 (uart) vs. 00000080 (serial)
+[ 1092.887956] uart_startup
+[ 1092.894003] genirq: Flags mismatch irq 17. 00000000 (uart) vs. 00000080 (serial)
+[ 1103.461593] uart_startup
+[ 1103.464194] genirq: Flags mismatch irq 17. 00000000 (uart) vs. 00000080 (serial)
+[ 1110.554110] uart_startup
+[ 1110.556914] genirq: Flags mismatch irq 17. 00000000 (uart) vs. 00000080 (serial)
+root@clanton:~# dmesg | tail -20
+[   28.895776] Bluetooth: HCI device and connection manager initialized
+[   28.920213] Bluetooth: HCI socket layer initialized
+[   28.931715] Bluetooth: L2CAP socket layer initialized
+[   28.936916] Bluetooth: SCO socket layer initialized
+[   29.000907] usbcore: registered new interface driver btusb
+[   29.080952] usbcore: registered new interface driver usbhid
+[   29.086572] usbhid: USB HID core driver
+[  271.341134] The process has started 
+[  271.360348]  uart_plat_probe 
+[  271.380880]  I am alive !! 
+[  485.674979] uart_type
+[ 1086.200972] uart_request_port
+[ 1086.204046] uart_startup
+[ 1086.206635] genirq: Flags mismatch irq 17. 00000000 (uart) vs. 00000080 (serial)
+[ 1092.887956] uart_startup
+[ 1092.894003] genirq: Flags mismatch irq 17. 00000000 (uart) vs. 00000080 (serial)
+[ 1103.461593] uart_startup
+[ 1103.464194] genirq: Flags mismatch irq 17. 00000000 (uart) vs. 00000080 (serial)
+[ 1110.554110] uart_startup
+[ 1110.556914] genirq: Flags mismatch irq 17. 00000000 (uart) vs. 00000080 (serial)
+
+
+serial
+root@clanton:/lib/modules/3.8.7-yocto-standard/kernel/drivers/tty# cd serial/
+root@clanton:/lib/modules/3.8.7-yocto-standard/kernel/drivers/tty/serial# ls
+intel_quark_uart.ko
+root@clanton:/lib/modules/3.8.7-yocto-standard/kernel/drivers/tty/serial# cp intel_quark_uart.ko /home/root/
+root@clanton:/lib/modules/3.8.7-yocto-standard/kernel/drivers/tty/serial# 
+
+1:2345:respawn:/sbin/getty 38400 tty1
+                                     
+root@clanton:/etc# cp inittab /home/root/
+root@clanton:/etc# 
+
+root@clanton:/lib/modules/3.8.7-yocto-standard/kernel/drivers/usb/serial# cp pl2303.ko /home/root/
+root@clanton:/lib/modules/3.8.7-yocto-standard/kernel/drivers/usb/serial# cp usbserial.ko /home/root/
+root@clanton:/lib/modules/3.8.7-yocto-standard/kernel/drivers/usb/serial# 
