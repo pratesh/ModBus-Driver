@@ -49,7 +49,7 @@ Things to do
 #define UART_BASE  0x9000F000/* Memory base for UART0 */
 // 0x9000b000 0x9000F000
 #define UART_REGISTER_SPACE  0x0b // a total of 11 registers - refer intel galileo datasheet
-
+                                  // or is it the total memory required 0ABh
 /* Semantics of bits in the status register */
 #define UART_TX_FULL         0x02  /* TX FIFO is full */
 #define UART_RX_EMPTY        0x08  /* TX FIFO is empty */
